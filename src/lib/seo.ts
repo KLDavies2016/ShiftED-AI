@@ -1,0 +1,84 @@
+import type { Metadata } from "next";
+import { absoluteUrl, SITE_URL } from "./utils";
+
+/**
+ * Build consistent <head> metadata across pages.
+ *
+ * Pass page-specific bits; we layer them onto the brand defaults so canonical,
+ * Open Graph, and Twitter cards always agree.
+ */
+export interface BuildMetadataInput {
+  title: string;
+  description: string;
+  path?: string;
+  image?: string;
+  noIndex?: boolean;
+  keywords?: string[];
+}
+
+const DEFAULT_OG_IMAGE = "/og/default.png";
+
+export function buildMetadata({
+  title,
+  description,
+  path = "/",
+  image = DEFAULT_OG_IMAGE,
+  noIndex = false,
+  keywords = [],
+}: BuildMetadataInput): Metadata {
+  const url = absoluteUrl(path);
+  const imageUrl = image.startsWith("http") ? image : absoluteUrl(image);
+  const fullTitle = title.includes("ShiftED AI")
+    ? title
+    : `${title} — ShiftED AI`;
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: fullTitle,
+    description,
+    keywords: [
+      "emotional intelligence",
+      "workforce wellbeing",
+      "empathy training",
+      "difficult conversations",
+      "moral injury",
+      "manager training",
+      "burnout prevention",
+      ...keywords,
+    ],
+    alternates: { canonical: url },
+    robots: noIndex
+      ? { index: false, follow: false }
+      : { index: true, follow: true },
+    openGraph: {
+      type: "website",
+      url,
+      title: fullTitle,
+      description,
+      siteName: "ShiftED AI",
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description,
+      images: [imageUrl],
+    },
+    icons: {
+      icon: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
+    },
+  };
+}
+
+/** JSON-LD organization payload — drop into a <Script type="application/ld+json"> tag. */
+export const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ShiftED AI",
+  url: SITE_URL,
+  logo: absoluteUrl("/logo/shifted-ai-mark.svg"),
+  description:
+    "ShiftED AI is a practice-based training platform — a gym for the mind that builds emotional intelligence at work. Empathy, difficult conversations and moral resilience.",
+  sameAs: ["https://my-pwb.co.uk"],
+};

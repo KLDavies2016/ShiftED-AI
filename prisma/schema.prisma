@@ -1,0 +1,185 @@
+// ShiftED AI — Prisma schema (waitlist + marketing forms first; auth/orgs to follow).
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// -- Marketing capture -------------------------------------------------------
+
+model WaitlistEntry {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  fullName    String?
+  role        WaitlistRole?
+  organization String?
+  source      String?  // utm_source or referrer
+  consent     Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  confirmedAt DateTime?
+
+  @@index([createdAt])
+}
+
+enum WaitlistRole {
+  INDIVIDUAL
+  MANAGER
+  HR_LEADER
+  CLINICIAN
+  EDUCATOR
+  OTHER
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  email     String
+  fullName  String
+  topic     ContactTopic @default(GENERAL)
+  message   String
+  company   String?
+  ipHash    String?
+  createdAt DateTime @default(now())
+}
+
+enum ContactTopic {
+  GENERAL
+  SALES
+  PARTNERSHIPS
+  PRESS
+  SUPPORT
+}
+
+model NewsletterSubscriber {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  source      String?
+  confirmed   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  unsubscribedAt DateTime?
+}
+
+/// Applications from people who want to actively help shape ShiftED as a
+/// tester. Submitted from /testing — captures a few qualitative signals so we
+/// can prioritise the right early voices.
+model TesterApplication {
+  id                String   @id @default(cuid())
+  email             String   @unique
+  fullName          String
+  company           String?
+  /// How important do they think empathy & critical-thinking are (1–5).
+  importanceRating  Int
+  /// "Is this a tool you would want access to at work?" — free text answer.
+  wantsAtWork       String
+  /// "What is your biggest challenge?" — free text answer.
+  biggestChallenge  String
+  source            String?
+  ipHash            String?
+  createdAt         DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+// -- Auth / app scaffolding (kept minimal until the platform phase) ----------
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  fullName      String?
+  avatarUrl     String?
+  role          UserRole  @default(MEMBER)
+  emailVerified DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  memberships   TeamMember[]
+  sessions      Session[]
+  activityLogs  ActivityLog[]
+  notifications Notification[]
+}
+
+enum UserRole {
+  MEMBER
+  ADMIN
+  OWNER
+}
+
+model Team {
+  id          String       @id @default(cuid())
+  name        String
+  slug        String       @unique
+  plan        BillingPlan  @default(WAITLIST)
+  createdAt   DateTime     @default(now())
+  members     TeamMember[]
+  subscription Subscription?
+}
+
+model TeamMember {
+  id      String   @id @default(cuid())
+  userId  String
+  teamId  String
+  role    TeamRole @default(MEMBER)
+  joinedAt DateTime @default(now())
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  team    Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, teamId])
+}
+
+enum TeamRole {
+  OWNER
+  ADMIN
+  MEMBER
+}
+
+model Subscription {
+  id                 String   @id @default(cuid())
+  teamId             String   @unique
+  stripeCustomerId   String?  @unique
+  stripeSubscriptionId String? @unique
+  status             String   @default("trialing")
+  currentPeriodEnd   DateTime?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  team               Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+}
+
+enum BillingPlan {
+  WAITLIST
+  STARTER
+  GROWTH
+  ENTERPRISE
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model ActivityLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  action    String
+  metadata  Json?
+  createdAt DateTime @default(now())
+  user      User?    @relation(fields: [userId], references: [id])
+  @@index([createdAt])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  body      String?
+  link      String?
+  readAt    DateTime?
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
