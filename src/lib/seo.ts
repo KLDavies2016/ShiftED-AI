@@ -64,10 +64,8 @@ export function buildMetadata({
       description,
       images: [imageUrl],
     },
-    icons: {
-      icon: "/favicon.ico",
-      apple: "/apple-touch-icon.png",
-    },
+    // Icons are auto-detected by Next.js from `src/app/icon.svg` and
+    // `src/app/apple-icon.png` — no manual config needed here.
   };
 }
 
