@@ -107,7 +107,7 @@ export function WaitlistForm({ variant = "inline", className }: WaitlistFormProp
             id="fullName"
             label="Full name"
             error={errors.fullName?.message}
-            inputProps={{ ...register("fullName"), placeholder: "Alex Mensah", autoComplete: "name" }}
+            inputProps={{ ...register("fullName"), placeholder: "Alex Avatar", autoComplete: "name" }}
           />
           <Field
             id="email"
@@ -140,7 +140,7 @@ export function WaitlistForm({ variant = "inline", className }: WaitlistFormProp
             id="organization"
             label="Organisation (optional)"
             error={errors.organization?.message}
-            inputProps={{ ...register("organization"), placeholder: "Hartwell NHS Trust" }}
+            inputProps={{ ...register("organization"), placeholder: "ShiftED AI" }}
           />
           <div className="sm:col-span-2">
             <label className="flex items-start gap-3 text-xs text-muted-foreground">

@@ -23,13 +23,19 @@ export function CtaBanner() {
           <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
             <div>
               <h2 className="font-display text-display-lg text-foreground">
-                Protect the human{" "}
-                <span className="text-gradient-brand">in your work</span>.
+                Build better human emotions,{" "}
+                <span className="text-gradient-brand">using AI as a tool</span>.
               </h2>
               <p className="mt-4 max-w-xl text-balance text-muted-foreground">
-                Join the waitlist to be notified when we go live — or head to
-                our <a href="/testing" className="underline underline-offset-2 hover:text-foreground">testing page</a> to
-                sign up as a tester and help shape the experience.
+                Join the waitlist to be notified when we go live. Or head to
+                our{" "}
+                <a
+                  href="/testing"
+                  className="underline underline-offset-2 hover:text-foreground"
+                >
+                  testing page
+                </a>{" "}
+                to apply to be a tester and help shape the platform.
               </p>
             </div>
             <WaitlistForm variant="expanded" />

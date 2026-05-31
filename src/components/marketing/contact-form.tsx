@@ -73,7 +73,7 @@ export function ContactForm({ defaultTopic = "GENERAL" }: ContactFormProps) {
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="grid gap-4 sm:grid-cols-2">
       <div>
         <Label htmlFor="fullName" className="mb-1.5 block">Full name</Label>
-        <Input id="fullName" autoComplete="name" placeholder="Alex Mensah" {...register("fullName")} />
+        <Input id="fullName" autoComplete="name" placeholder="Alex Avatar" {...register("fullName")} />
         {errors.fullName && <p className="mt-1.5 text-xs text-destructive">{errors.fullName.message}</p>}
       </div>
       <div>
@@ -89,7 +89,7 @@ export function ContactForm({ defaultTopic = "GENERAL" }: ContactFormProps) {
       </div>
       <div>
         <Label htmlFor="company" className="mb-1.5 block">Organisation (optional)</Label>
-        <Input id="company" placeholder="Hartwell NHS Trust" {...register("company")} />
+        <Input id="company" placeholder="ShiftED AI" {...register("company")} />
       </div>
       <div>
         <Label htmlFor="topic" className="mb-1.5 block">Topic</Label>

@@ -9,7 +9,6 @@ import { FeatureGrid } from "@/components/marketing/feature-grid";
 import { Benefits } from "@/components/marketing/benefits";
 import { IntegrationsSection } from "@/components/marketing/integrations-section";
 import { DashboardPreview } from "@/components/marketing/dashboard-preview";
-import { TestimonialCarousel } from "@/components/marketing/testimonial-carousel";
 import { PricingTable } from "@/components/marketing/pricing-table";
 import { FaqSection } from "@/components/marketing/faq-section";
 import { CtaBanner } from "@/components/marketing/cta-banner";
@@ -41,7 +40,6 @@ export default function HomePage() {
         <Benefits />
         <DashboardPreview />
         <IntegrationsSection />
-        <TestimonialCarousel />
         <PricingTable compact={false} />
         <FaqSection />
         <CtaBanner />

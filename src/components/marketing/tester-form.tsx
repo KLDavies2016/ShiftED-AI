@@ -95,7 +95,7 @@ export function TesterForm() {
         error={errors.fullName?.message}
         inputProps={{
           ...register("fullName"),
-          placeholder: "Alex Mensah",
+          placeholder: "Alex Avatar",
           autoComplete: "name",
         }}
       />
@@ -117,7 +117,7 @@ export function TesterForm() {
           error={errors.company?.message}
           inputProps={{
             ...register("company"),
-            placeholder: "Hartwell NHS Trust",
+            placeholder: "ShiftED AI",
             autoComplete: "organization",
           }}
         />

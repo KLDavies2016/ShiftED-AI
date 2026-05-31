@@ -39,12 +39,12 @@ const values = [
   {
     icon: Heart,
     title: "Care comes first",
-    body: "We design for the people doing the hardest jobs. If our product creates more pressure than relief, we've failed.",
+    body: "We have designed this for all who want to develop their skills in emotional intelligence, awareness, resilience and so much more.",
   },
   {
     icon: BrainCircuit,
-    title: "Clinical, not corporate",
-    body: "Every scenario is built with psychologists and validated frameworks. We won't ship soft prompts dressed up as therapy.",
+    title: "Practice-based. Not one-off training.",
+    body: "Every module journey is built with our psychologists' framework and certified skills coaches. You don't just complete skills training — you practise and reflect for long-term change.",
   },
   {
     icon: ShieldCheck,
@@ -54,7 +54,7 @@ const values = [
   {
     icon: Sparkles,
     title: "Practice over performance",
-    body: "We measure consistency and confidence, not vanity engagement. The point isn't to win a streak — it's to be different at work.",
+    body: "You can track your progress and identify the gaps in your skillset. The point isn't to win score streaks, but to see long-term behavioural change.",
   },
 ];
 
@@ -270,10 +270,9 @@ export default function AboutPage() {
             </h2>
             <p className="mt-4 text-balance text-muted-foreground">
               ShiftED is developed and certified by psychologists and
-              wellbeing experts. Our Co-Founder & Special Advisor{" "}
-              <strong className="text-foreground">Simon Agnew</strong> — a
-              psychological therapist with extensive humanitarian-operations
-              experience — brings clinical depth to every module we ship.
+              wellbeing experts. Our AI Engine is designed and trained by
+              our Co-Founder & Special Advisor{" "}
+              <strong className="text-foreground">Simon Agnew</strong>.
             </p>
           </Reveal>
 
@@ -306,13 +305,13 @@ export default function AboutPage() {
           <Reveal className="mx-auto max-w-2xl text-center">
             <Badge>Inclusive by design</Badge>
             <h2 className="mt-4 font-display text-display-lg">
-              Premium experience.{" "}
-              <span className="text-gradient-brand">Built for everyone.</span>
+              Accessible Experience.{" "}
+              <span className="text-gradient-brand">Built for Everyone.</span>
             </h2>
             <p className="mt-4 text-balance text-muted-foreground">
               A slick design isn't worth much if it locks people out. We treat
               inclusion as a design constraint, not an accessibility audit at
-              the end — woven into the type, contrast, motion, copy and
+              the end. Woven into the type, contrast, motion, copy and
               defaults from the first wireframe.
             </p>
           </Reveal>
@@ -424,11 +423,9 @@ export default function AboutPage() {
                 For organisations rolling out at scale.
               </h2>
               <p className="mt-4 max-w-2xl text-muted-foreground">
-                If you're a CPO, NGO operations lead, or L&D lead protecting a
-                workforce, we'd love to scope a pilot with you. Custom scenarios
-                authored with your clinicians, aggregate insight reports for
-                leadership, full DPA support — and a dedicated psychologist
-                partner walking alongside the rollout.
+                If you are a larger organisation and would like to discuss what
+                we can do to help your team, please do contact us for a custom
+                setup tailored to your business needs and your team.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild>
