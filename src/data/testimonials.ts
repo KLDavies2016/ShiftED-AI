@@ -31,9 +31,10 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "The moral-injury module is the work I wish I'd had access to ten years ago. It belongs in every humanitarian onboarding programme.",
-    author: "Simon Agnew",
-    role: "Founder, my-pwb.co.uk",
+      "Every leader I work with has the same blind spot: their phone. ShiftED's social-media practice gives people a way to notice the pull and choose differently — without the shame.",
+    author: "Dr. Iona Hardy",
+    role: "Organisational Psychologist",
+    organization: "Northpoint Consulting",
   },
   {
     quote:

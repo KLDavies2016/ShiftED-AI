@@ -41,7 +41,7 @@ export function buildMetadata({
       "workforce wellbeing",
       "empathy training",
       "difficult conversations",
-      "moral injury",
+      "social media reliance",
       "manager training",
       "burnout prevention",
       ...keywords,

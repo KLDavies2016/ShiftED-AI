@@ -65,13 +65,13 @@ const values = [
  */
 const team = [
   {
-    name: "Kelly Louise Davies",
+    name: "Louise Davies",
     role: "Founder",
     bio: "Founder of ShiftED AI and Equal Differences. Experienced in business operations and account management with a passion for empathy-driven AI and community building.",
     tags: ["ShiftED AI", "Equal Differences"],
     linkedin: "https://www.linkedin.com/in/kelly-louise-davies-75401b78",
     photo: "/team/kelly-louise-davies.jpg",
-    initials: "KD",
+    initials: "LD",
     accent: "from-brand-pink/30 to-brand-violet/30",
   },
   {
@@ -270,11 +270,10 @@ export default function AboutPage() {
             </h2>
             <p className="mt-4 text-balance text-muted-foreground">
               ShiftED is developed and certified by psychologists and
-              wellbeing experts. Our Moral Injury Mitigation module is
-              designed by{" "}
-              <strong className="text-foreground">Simon Agnew</strong>, a
-              leading practitioner in the field — and our Co-Founder & Special
-              Advisor.
+              wellbeing experts. Our Co-Founder & Special Advisor{" "}
+              <strong className="text-foreground">Simon Agnew</strong> — a
+              psychological therapist with extensive humanitarian-operations
+              experience — brings clinical depth to every module we ship.
             </p>
           </Reveal>
 

@@ -19,7 +19,7 @@ export const faq: FaqItem[] = [
   {
     question: "Who designed the content?",
     answer:
-      "Every AI module has been trained by clinical psychologists and wellbeing experts. The Moral Injury Mitigation module is designed by Simon Agnew, a leading practitioner in the field and our Co-Founder & Special Advisor.",
+      "Every AI module has been trained by clinical psychologists and wellbeing experts. Our Co-Founder & Special Advisor Simon Agnew — a psychological therapist with extensive humanitarian-operations experience — brings clinical depth to every module we ship.",
   },
   {
     question: "Will my data stay private?",

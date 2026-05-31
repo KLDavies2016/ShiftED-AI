@@ -21,7 +21,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = buildMetadata({
-  title: "ShiftED AI — Build the human skills your work demands",
+  title: "ShiftED AI — Build the human skills, one practice at a time",
   description:
     "ShiftED AI is a practice-based training platform — a gym for the mind for emotional intelligence at work. Empathy, difficult conversations and moral resilience, trained like any other skill.",
 });

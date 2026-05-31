@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = buildMetadata({
   title: "Features — a growing module library",
   description:
-    "Empathy Practice, Managing Difficult Conversations and Moral Injury Mitigation — the opening modules in ShiftED AI's growing library, each trained by clinical psychologists.",
+    "Empathy Practice, Managing Difficult Conversations and Social Media Reliance — the opening modules in ShiftED AI's growing library, each trained by clinical psychologists.",
   path: "/features",
 });
 

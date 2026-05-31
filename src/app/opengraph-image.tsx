@@ -2,7 +2,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "ShiftED AI — Build the human skills your work demands";
+export const alt = "ShiftED AI — Build the human skills, one practice at a time";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -51,7 +51,7 @@ export default async function OG() {
               maxWidth: 920,
             }}
           >
-            Build the{" "}
+            Build the human skills,{" "}
             <span
               style={{
                 background:
@@ -61,9 +61,8 @@ export default async function OG() {
                 color: "transparent",
               }}
             >
-              human skills
-            </span>{" "}
-            your work demands.
+              one practice at a time.
+            </span>
           </div>
           <div
             style={{

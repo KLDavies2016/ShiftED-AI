@@ -1,7 +1,7 @@
 import {
   HeartHandshake,
   MessagesSquare,
-  ShieldCheck,
+  Smartphone,
   type LucideIcon,
 } from "lucide-react";
 
@@ -50,17 +50,17 @@ export const modules: Module[] = [
     accent: "violet",
   },
   {
-    slug: "moral-injury-mitigation",
-    name: "Moral Injury Mitigation",
-    tagline: "Process ethical compromise without losing yourself.",
+    slug: "social-media-reliance",
+    name: "Social Media Reliance",
+    tagline: "Use the apps without being used by them.",
     description:
-      "Tools designed with moral-injury specialist Simon Agnew that help people in mission-led roles process ethical compromise and stay anchored to their core values under pressure.",
+      "Social platforms are engineered to take your attention — and most days they win. Build the practice that helps you spot the pull, name what you're really seeking, and step back into the work you actually want to be doing.",
     bullets: [
-      "Structured reflection grounded in moral-injury research",
-      "Private journaling with optional clinician oversight",
-      "Designed for healthcare, social work and humanitarian roles",
+      "Recognise the triggers that pull you back to the feed",
+      "Practise the pause before you scroll, reply or post",
+      "Track the moments you choose intention over reaction",
     ],
-    icon: ShieldCheck,
+    icon: Smartphone,
     accent: "blue",
   },
 ];

@@ -32,7 +32,7 @@ export const pricingPlans: PricingPlan[] = [
     highlighted: true,
     features: [
       "Everything in Starter",
-      "Moral Injury Mitigation module",
+      "Social Media Reliance module",
       "Team confidence dashboards (anonymised)",
       "Shared module library + custom prompts",
       "Slack / Microsoft Teams notifications",
