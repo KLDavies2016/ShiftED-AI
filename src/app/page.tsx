@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 
 import { Hero } from "@/components/marketing/hero";
-import { LogoWall } from "@/components/marketing/logo-wall";
+import { TesterSpotlight } from "@/components/marketing/tester-spotlight";
 import { FeatureGrid } from "@/components/marketing/feature-grid";
 import { Benefits } from "@/components/marketing/benefits";
 import { IntegrationsSection } from "@/components/marketing/integrations-section";
@@ -17,7 +17,7 @@ import { CtaBanner } from "@/components/marketing/cta-banner";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "ShiftED AI — Build the human skills your work demands",
+  title: "ShiftED AI — Build the human skills, one practice at a time",
   description:
     "A gym for the mind. ShiftED AI is the practice-based training platform for emotional intelligence at work — empathy, difficult conversations and moral resilience, trained like any other skill.",
   path: "/",
@@ -36,7 +36,7 @@ export default function HomePage() {
       <SiteHeader />
       <main id="main" className="flex-1">
         <Hero />
-        <LogoWall />
+        <TesterSpotlight />
         <FeatureGrid />
         <Benefits />
         <DashboardPreview />
