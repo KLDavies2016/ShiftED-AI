@@ -19,7 +19,9 @@ type Mode = "waitlist" | "tester";
  * active tabpanel is fully revealed (no nested focus traps).
  */
 export function TestingSwitcher() {
-  const [mode, setMode] = React.useState<Mode>("waitlist");
+  // Tester is the default tab — testers are the priority conversion on this
+  // page; waitlist remains a one-click alternative.
+  const [mode, setMode] = React.useState<Mode>("tester");
   const waitlistTabRef = React.useRef<HTMLButtonElement>(null);
   const testerTabRef = React.useRef<HTMLButtonElement>(null);
 
@@ -77,7 +79,8 @@ export function TestingSwitcher() {
               Join the waitlist
             </h2>
             <p className="mt-1 text-sm text-muted-foreground">
-              One email when we go live. No follow-ups in between.
+              Get one email when we go live. No follow-up sequence, no spam.
+              Just the moment the platform opens.
             </p>
             <div className="mt-5">
               <WaitlistForm variant="expanded" />
@@ -94,7 +97,8 @@ export function TestingSwitcher() {
               Sign up to be a tester
             </h2>
             <p className="mt-1 text-sm text-muted-foreground">
-              Tell us a little about you and we'll be in touch with next steps.
+              Help us shape it. We'll send a short brief, give you early
+              access, and request feedback at the end of the journey.
             </p>
             <div className="mt-5">
               <TesterForm />

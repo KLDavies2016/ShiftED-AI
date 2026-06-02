@@ -5,7 +5,8 @@ export interface NavLink {
 }
 
 export const primaryNav: NavLink[] = [
-  { label: "Features", href: "/features" },
+  { label: "Home", href: "/" },
+  { label: "Journeys", href: "/features" },
   { label: "Pricing", href: "/pricing" },
   { label: "Integrations", href: "/integrations" },
   { label: "Testing", href: "/testing" },
@@ -14,7 +15,7 @@ export const primaryNav: NavLink[] = [
 
 export const footerNav = {
   product: [
-    { label: "Features", href: "/features" },
+    { label: "Journeys", href: "/features" },
     { label: "Pricing", href: "/pricing" },
     { label: "Integrations", href: "/integrations" },
     { label: "Testing", href: "/testing" },
@@ -28,7 +29,6 @@ export const footerNav = {
     { label: "Privacy", href: "/legal/privacy" },
     { label: "Terms", href: "/legal/terms" },
     { label: "Cookies", href: "/legal/cookies" },
-    { label: "DPA", href: "/legal/dpa" },
   ],
   resources: [
     { label: "Trust & safety", href: "/about#trust" },

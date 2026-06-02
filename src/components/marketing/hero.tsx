@@ -59,9 +59,8 @@ export function Hero() {
               </h1>
               <p className="mt-6 max-w-xl text-balance text-base text-muted-foreground sm:text-lg">
                 A gym for the mind that helps you build your empathy, critical
-                thinking and emotional intelligence muscles with guided and
-                practice-based methods. A practice-based training platform, for
-                long-term behavioural change.
+                thinking and emotional intelligence with guided and
+                practice-based training, for long-term behavioural change.
               </p>
             </motion.div>
 
@@ -93,7 +92,7 @@ export function Hero() {
                 Certified by psychologists
               </span>
               <span aria-hidden>·</span>
-              <span>GDPR-ready · UK & EU hosting</span>
+              <span>GDPR-ready</span>
               <span aria-hidden>·</span>
               <Link href="/features" className="inline-flex items-center gap-1 underline underline-offset-2 hover:text-foreground">
                 See how it works <ArrowRight className="size-3" />

@@ -14,9 +14,9 @@ import { courseSchema, jsonLd } from "@/lib/schema";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Features — a growing module library",
+  title: "Journeys — developing the human skillset",
   description:
-    "Empathy Practice, Managing Difficult Conversations and Social Media Reliance — the opening modules in ShiftED AI's growing library, each trained by clinical psychologists.",
+    "Empathy Practice, Managing Difficult Conversations and Social Media Reliance — ShiftED AI's specialised journey modules, each trained by clinical psychologists for long-term behavioural change.",
   path: "/features",
 });
 
@@ -49,21 +49,24 @@ export default function FeaturesPage() {
           {/* AEO-friendly factual definition (visually hidden but readable by
               assistive tech and AI parsers). */}
           <p className="sr-only">
-            ShiftED AI's module library is a set of psychology-certified
-            interactive AI training programmes for professionals practising
-            empathy, difficult conversations and attention management. Each
-            module is built with clinical frameworks and runs as short,
-            repeatable practice sessions.
+            ShiftED AI's journeys are psychology-certified interactive AI
+            training programmes for professionals developing emotional and
+            social intelligence. Each journey is built with clinical
+            frameworks and runs as short, repeatable practice sessions for
+            long-term behavioural change.
           </p>
           <Reveal className="mx-auto max-w-3xl text-center">
-            <Badge>Features</Badge>
+            <Badge>Journeys</Badge>
             <h1 className="mt-4 font-display text-display-xl">
-              A growing library.{" "}
-              <span className="text-gradient-brand">One human skillset.</span>
+              Developing the human skillset.{" "}
+              <span className="text-gradient-brand">
+                One journey at a time.
+              </span>
             </h1>
             <p className="mt-6 text-balance text-lg text-muted-foreground">
-              The work of being human at work isn't one skill — it's many. We're
-              opening with three modules and growing the library from here.
+              Emotional and social intelligence are no longer nice-to-haves —
+              they're essential in today's world. Start developing your skills
+              now with our specialised journey modules.
             </p>
           </Reveal>
         </Container>
