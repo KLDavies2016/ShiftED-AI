@@ -10,6 +10,7 @@ import { AnimatedGlow } from "@/components/marketing/animated-glow";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 import { modules } from "@/data/modules";
 import { buildMetadata } from "@/lib/seo";
+import { courseSchema, jsonLd } from "@/lib/schema";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
@@ -20,12 +21,40 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function FeaturesPage() {
+  // Course JSON-LD for each module — gives AI search engines structured
+  // entities for queries like "how to practise difficult conversations".
+  const courseLd = modules.map((m) =>
+    courseSchema({
+      name: m.name,
+      description: `${m.tagline} ${m.description}`,
+      slug: m.slug,
+      about: m.bullets,
+    }),
+  );
+
   return (
     <>
+      {courseLd.map((data, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: jsonLd(data) }}
+        />
+      ))}
       {/* Page header */}
       <section className="relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-20">
         <AnimatedGlow />
         <Container>
+          {/* AEO-friendly factual definition (visually hidden but readable by
+              assistive tech and AI parsers). */}
+          <p className="sr-only">
+            ShiftED AI's module library is a set of psychology-certified
+            interactive AI training programmes for professionals practising
+            empathy, difficult conversations and attention management. Each
+            module is built with clinical frameworks and runs as short,
+            repeatable practice sessions.
+          </p>
           <Reveal className="mx-auto max-w-3xl text-center">
             <Badge>Features</Badge>
             <h1 className="mt-4 font-display text-display-xl">

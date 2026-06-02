@@ -8,6 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { AnimatedGlow } from "@/components/marketing/animated-glow";
 import { Reveal } from "@/components/marketing/reveal";
 import { buildMetadata } from "@/lib/seo";
+import { faqPageSchema, jsonLd } from "@/lib/schema";
+import { faq } from "@/data/faq";
 
 export const metadata: Metadata = buildMetadata({
   title: "Pricing — join the waitlist",
@@ -17,8 +19,16 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function PricingPage() {
+  // FAQPage JSON-LD: lets search engines (and Siri / ChatGPT / Gemini) read
+  // the questions and answers directly, without needing to expand the
+  // accordion via JavaScript.
   return (
     <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: jsonLd(faqPageSchema(faq)) }}
+      />
       <section className="relative overflow-hidden pt-24 pb-12 sm:pt-32 sm:pb-16">
         <AnimatedGlow />
         <Container>

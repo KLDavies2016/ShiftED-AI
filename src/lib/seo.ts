@@ -69,14 +69,7 @@ export function buildMetadata({
   };
 }
 
-/** JSON-LD organization payload — drop into a <Script type="application/ld+json"> tag. */
-export const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "ShiftED AI",
-  url: SITE_URL,
-  logo: absoluteUrl("/logo/shifted-ai-mark.svg"),
-  description:
-    "ShiftED AI is a practice-based training platform — a gym for the mind that builds emotional intelligence at work. Empathy, difficult conversations and moral resilience.",
-  sameAs: ["https://my-pwb.co.uk"],
-};
+// Schema markup helpers (Organization, Person, FAQPage, Course) now live in
+// `@/lib/schema` so they can be composed per-page without bloating this file.
+// Backwards-compat re-export kept for layout.tsx imports.
+export { organizationSchema } from "./schema";

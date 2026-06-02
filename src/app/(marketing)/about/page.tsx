@@ -27,6 +27,7 @@ import { AnimatedGlow } from "@/components/marketing/animated-glow";
 import { Reveal } from "@/components/marketing/reveal";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 import { buildMetadata } from "@/lib/seo";
+import { personSchema, jsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = buildMetadata({
   title: "About — protecting the human in the workforce",
@@ -130,8 +131,34 @@ const inclusion = [
 ];
 
 export default function AboutPage() {
+  // Build Person JSON-LD for each founder so AI search engines can map them
+  // as verified entities tied to the ShiftED AI organisation.
+  const peopleLd = team.map((p) =>
+    personSchema({
+      name: p.name,
+      jobTitle: p.role,
+      description: p.bio,
+      linkedin: p.linkedin,
+      image: p.photo,
+      knowsAbout:
+        p.role === "Co-Founder & Special Advisor"
+          ? ["psychological therapy", "moral injury", "humanitarian operations"]
+          : p.role === "Founder"
+            ? ["business operations", "empathy-driven AI", "community building"]
+            : ["sales", "business development", "partnerships"],
+    }),
+  );
+
   return (
     <>
+      {peopleLd.map((data, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: jsonLd(data) }}
+        />
+      ))}
       <section className="relative overflow-hidden pt-24 pb-12 sm:pt-32 sm:pb-16">
         <AnimatedGlow />
         <Container>
